@@ -7,9 +7,9 @@
         mc:Ignorable="d"
          Icon="beauty_logo.ico"
         Title="Список посещений" Height="450" Width="800">
-    <Grid>
-        <Image Source="beauty_logo.ico" Margin="663,349,32,10" />
-        <ListView x:Name="List" Margin="0,0,0,75">
+    <Grid Margin="10,0,0,0">
+        <Image Source="beauty_logo.ico" Margin="-14,2,709,357" />
+        <ListView x:Name="List" Margin="66,2,0,9">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
