@@ -1,0 +1,59 @@
+﻿<Window x:Class="GNEBeautySalon.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GNEBeautySalon"
+        mc:Ignorable="d"
+        Icon="beauty_logo.ico"
+        Title="Добавление" Height="450" Width="300" MinWidth="300" MinHeight="400">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0,1*"></ColumnDefinition>
+            <ColumnDefinition Width="0,2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,1*"></RowDefinition>
+            <RowDefinition Height="0,2*"></RowDefinition>
+            <RowDefinition Height="0,2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Height="16" HorizontalAlignment="Right" x:Name="TextBlockId">Идентификатор:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ID}" x:Name="TextBoxId" Height="20" Width="150" Margin="0,0,0,0" IsEnabled="False"/>
+
+        <TextBlock Grid.Row="1" Height="16" HorizontalAlignment="Right">Пол:</TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="ComboBoxPol" SelectedItem="{Binding Gender}" DisplayMemberPath="Name" Width="150" Height="20" Margin="0,0,0,0"/>
+
+        <TextBlock Grid.Row="2" Height="16" HorizontalAlignment="Right" >Имя:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FirstName}" x:Name="TextBoxImya" Height="20" Width="150" Margin="0,0,0,0" PreviewTextInput="TextBoxImya_PreviewTextInput" MaxLength="50"/>
+
+        <TextBlock Grid.Row="3" Height="16" HorizontalAlignment="Right" >Фамилия:</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LastName}" x:Name="TextBoxFamiliya" Width="150" Height="20" Margin="0,0,0,0" MaxLength="50" PreviewTextInput="TextBoxFamiliya_PreviewTextInput"/>
+
+        <TextBlock Grid.Row="4" Height="16" HorizontalAlignment="Right" >Отчество:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Patronymic}" x:Name="TextBoxOtchestvo" Width="150" Height="20" Margin="0,0,0,0" MaxLength="50" PreviewTextInput="TextBoxOtchestvo_PreviewTextInput"/>
+
+        <TextBlock Grid.Row="5" Height="16" HorizontalAlignment="Right">Дата рождения:</TextBlock>
+        <DatePicker Grid.Row="5" Grid.Column="1" x:Name="DatePickerBirthday" Width="150" Height="23"/>
+        
+        <TextBlock Grid.Row="6" Height="16" HorizontalAlignment="Right">Телефон:</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Phone}" x:Name="TextBoxTelefon" Width="150" Height="20" Margin="0,0,0,0" MaxLength="20" PreviewTextInput="TextBoxTelefon_PreviewTextInput"/>
+
+        <TextBlock Grid.Row="7" Height="16" HorizontalAlignment="Right" >Email:</TextBlock>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Email}" x:Name="TextBoxEmail" Width="150" Height="20" Margin="0,0,0,0"/>
+
+        <TextBlock Grid.Row="8" Height="16" HorizontalAlignment="Right">Фотография:</TextBlock>
+        <Button Grid.Row="8" Grid.Column="1" x:Name="BtnImage" Height="20" Width="60" Margin="60,0,0,0" Click="BtnImage_Click">Добавить</Button>
+        <Image Grid.Row="8" Grid.Column="1" x:Name="ImgMin" Source="{Binding PhotoPath}" Width="60" Height="60" Margin="0,0,80,0" ></Image>
+
+        <Button x:Name="BtnSave" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Height="25" Width="150" Click="BtnSave_Click">Сохранить</Button>
+        <Image Source="beauty_logo.ico" Grid.Column="1" Margin="109,10,-25,12" Grid.Row="9" />
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="GNEBeautySalon.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GNEBeautySalon"
+        mc:Ignorable="d"
+         Icon="beauty_logo.ico"
+        Title="Список посещений" Height="450" Width="800">
+    <Grid>
+        <Image Source="beauty_logo.ico" Margin="663,349,32,10" />
+        <ListView x:Name="List" Margin="0,0,0,75">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Service.Title}"></TextBlock>
+                        <TextBlock Text="{Binding StartTime, StringFormat={}{0:HH:mm dd-MM-yyyy}}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

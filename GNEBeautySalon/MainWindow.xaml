@@ -1,0 +1,68 @@
+﻿<Window x:Class="GNEBeautySalon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GNEBeautySalon"
+        mc:Ignorable="d"
+        Icon="beauty_logo.ico"
+        Title="Салон красоты(Список клиентов)" Height="450" Width="850" MinWidth="850" MinHeight="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <WrapPanel Orientation="Horizontal" MinHeight="50" Background="#FFFFE4FF">
+            <Image Source="beauty_logo.ico" />
+            <Button x:Name="BtnAdd" Width="70" Height="20" Margin="5,0,0,0" Click="BtnAdd_Click">Добавить</Button>
+            <Button x:Name="BtnDelete" Width="70" Height="20" Margin="5,0,0,0" Click="BtnDelete_Click" IsEnabled="False">Удалить</Button>
+            <Button x:Name="BtnEdite" Width="70" Height="20" Margin="5,0,0,0" Click="BtnEdite_Click" IsEnabled="False">Изменить</Button>
+
+            <ComboBox  Name="SortGender"  Width="97" Margin="5,15,0,15" SelectionChanged="SortGender_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >
+                <ComboBoxItem>Все</ComboBoxItem>
+                <ComboBoxItem>Женский</ComboBoxItem>
+                <ComboBoxItem>Мужской</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Height="16" Margin="5,0,0,0">Имя:</TextBlock>
+            <TextBox x:Name="TextBoxImya" Width="120" Margin="3,15,0,15" TextChanged="TextBoxImya_TextChanged" PreviewTextInput="TextBoxImya_PreviewTextInput"/>
+            
+            <TextBlock Height="16" Margin="5,0,0,0"> Email:</TextBlock>
+            <TextBox x:Name="TextBoxEmail" Width="120" Margin="3,15,0,17" TextChanged="TextBoxEmail_TextChanged"/>
+            
+            <TextBlock Height="16" Margin="5,0,0,0"> Телефон:</TextBlock>
+            <TextBox x:Name="TextBoxPhone" Width="120" Margin="3,15,3,15" TextChanged="TextBoxPhone_TextChanged" PreviewTextInput="TextBoxPhone_PreviewTextInput"/>
+            
+        </WrapPanel>
+        <DataGrid Grid.Row="1" x:Name="DataGridClient" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Background="White" SelectionChanged="DataGridClient_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Идентификатор" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пол" Binding="{Binding Gender.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Birthday, StringFormat={}{0:yyyy-MM-dd}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата добавления" Binding="{Binding RegistrationDate, StringFormat={}{0:dd-MM-yyyy hh:MM:ss}}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DockPanel Grid.Row="2" Background="#FFFFE4FF">
+            <TextBlock x:Name="ShowRow" Text="  из  " Height="20" Margin="10,0,0,0"></TextBlock>
+            <TextBlock Text="Показывать:" Height="20" Margin="15,0,0,0"/>
+            <ComboBox x:Name="CountRow" Height="20" Width="70" Margin="5,0,0,0" SelectionChanged="CountRow_SelectionChanged">
+                <ComboBoxItem>Все</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>50</ComboBoxItem>
+                <ComboBoxItem>200</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="NextList" Height="20" Margin="0,0,10,0" DockPanel.Dock="Right" Click="NextList_Click">Следующая станица</Button>
+            <Button x:Name="PreviousList" Height="20" Margin="0,0,10,0" DockPanel.Dock="Right" Click="PreviousList_Click">Предыдущая страница</Button>
+            <Button x:Name="VistList" Height="20" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="VistList_Click">Список посещений</Button>
+        </DockPanel>
+    </Grid>
+</Window>
