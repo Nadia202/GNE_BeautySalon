@@ -29,13 +29,13 @@
             </ComboBox>
 
             <TextBlock Height="16" Margin="5,0,0,0">Имя:</TextBlock>
-            <TextBox x:Name="TextBoxImya" Width="120" Margin="3,15,0,15" TextChanged="TextBoxImya_TextChanged" PreviewTextInput="TextBoxImya_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxImya" Width="100" Margin="3,15,0,15" TextChanged="TextBoxImya_TextChanged" PreviewTextInput="TextBoxImya_PreviewTextInput"/>
             
             <TextBlock Height="16" Margin="5,0,0,0"> Email:</TextBlock>
-            <TextBox x:Name="TextBoxEmail" Width="120" Margin="3,15,0,17" TextChanged="TextBoxEmail_TextChanged"/>
+            <TextBox x:Name="TextBoxEmail" Width="100" Margin="3,15,0,17" TextChanged="TextBoxEmail_TextChanged"/>
             
             <TextBlock Height="16" Margin="5,0,0,0"> Телефон:</TextBlock>
-            <TextBox x:Name="TextBoxPhone" Width="120" Margin="3,15,3,15" TextChanged="TextBoxPhone_TextChanged" PreviewTextInput="TextBoxPhone_PreviewTextInput"/>
+            <TextBox x:Name="TextBoxPhone" Width="100" Margin="3,15,3,15" TextChanged="TextBoxPhone_TextChanged" PreviewTextInput="TextBoxPhone_PreviewTextInput"/>
             
         </WrapPanel>
         <DataGrid Grid.Row="1" x:Name="DataGridClient" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Background="White" SelectionChanged="DataGridClient_SelectionChanged">
